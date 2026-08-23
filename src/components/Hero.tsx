@@ -34,10 +34,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAI, onOpenRegister }) => {
           {/* Left Column: Core Value Proposition */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
-            {/* Authentic Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-semibold shadow-sm">
-              <Feather className="w-4 h-4 text-amber-400" />
-              <span>Authentic Handwriting Services • Work From Home Opportunities</span>
+            {/* Authentic Badge with Logo */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-semibold shadow-sm">
+                <div className="w-5 h-5 rounded-full overflow-hidden p-0.5 bg-amber-400 shrink-0">
+                  <img src="/logo.jpg" alt="Logo" className="w-full h-full object-cover rounded-full" referrerPolicy="no-referrer" />
+                </div>
+                <span>Authentic Handwriting Services • Est. 2018</span>
+              </div>
             </div>
 
             {/* Main Headline */}
@@ -144,9 +148,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAI, onOpenRegister }) => {
               
               {/* Top Card Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-700">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-bold">
-                    <Award className="w-5 h-5" />
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 to-amber-600 shrink-0">
+                    <img src="/logo.jpg" alt="AAliya Logo" className="w-full h-full object-cover rounded-full bg-white" referrerPolicy="no-referrer" />
                   </div>
                   <div>
                     <h3 className="font-bold text-white text-base">Verified Project Breakdown</h3>

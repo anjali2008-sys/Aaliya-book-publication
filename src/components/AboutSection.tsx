@@ -18,10 +18,21 @@ export const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
+        <div className="max-w-3xl mx-auto text-center space-y-5 mb-16">
+          <div className="flex justify-center">
+            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 bg-gradient-to-tr from-amber-400 via-amber-300 to-amber-500 shadow-xl shadow-amber-500/20">
+              <img
+                src="/logo.jpg"
+                alt="AAliya Book Publication Seal"
+                className="w-full h-full object-cover rounded-full bg-white shadow-inner"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-wider">
             <BookOpen className="w-3.5 h-3.5 text-amber-700" />
-            <span>About Us</span>
+            <span>About Us • Certified Publication House</span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl font-serif-title font-extrabold text-slate-950 tracking-tight">

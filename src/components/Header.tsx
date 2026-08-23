@@ -23,23 +23,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAI, onOpenRegister }) => {
 
   return (
     <header className="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 text-slate-100 shadow-lg">
-      {/* Top Banner Notice */}
-      <div className="bg-gradient-to-r from-amber-600 via-amber-700 to-amber-600 text-slate-950 text-xs sm:text-sm font-semibold py-1.5 px-4 text-center tracking-wide flex items-center justify-center gap-2">
-        <span className="inline-flex items-center gap-1.5 bg-amber-900/20 px-2 py-0.5 rounded-full text-slate-950 font-bold uppercase text-[10px] tracking-wider border border-amber-950/20">
-          <span className="w-2 h-2 rounded-full bg-emerald-700 animate-pulse"></span>
-          2026 Batch Active
-        </span>
-        <span>
-          Instant <strong>70% Advance Payment</strong> credited upon slot registration via Telegram!
-        </span>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo / Brand Name */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 shadow-md shadow-amber-500/20 border border-amber-300 group-hover:scale-105 transition-transform duration-200">
-              <BookOpen className="w-6 h-6 text-slate-950 stroke-[2.2]" />
+            <div className="relative w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 via-amber-300 to-amber-500 shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform duration-200 shrink-0">
+              <img
+                src="/logo.jpg"
+                alt="AAliya Book Publication Logo"
+                className="w-full h-full object-cover rounded-full bg-white"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">

@@ -140,12 +140,22 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAI, onOpenRegister }) => {
           {/* Col 1 & 2: Brand Information */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-bold shadow-md">
-                <BookOpen className="w-5 h-5 text-slate-950" />
+              <div className="relative w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 to-amber-600 shadow-md shrink-0">
+                <img
+                  src="/logo.jpg"
+                  alt="AAliya Book Publication Logo"
+                  className="w-full h-full object-cover rounded-full bg-white"
+                  referrerPolicy="no-referrer"
+                />
               </div>
-              <span className="font-serif-title font-extrabold text-xl text-white">
-                AAliya Book Publication
-              </span>
+              <div className="flex flex-col">
+                <span className="font-serif-title font-extrabold text-xl text-white">
+                  AAliya Book Publication
+                </span>
+                <span className="text-[11px] text-amber-300 font-medium tracking-wide uppercase">
+                  Authentic Handwriting Services
+                </span>
+              </div>
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">

@@ -75,8 +75,13 @@ Hello Coordinator, I am ready to start my assignment. Please assign my manuscrip
         {/* Modal Header */}
         <div className="p-5 sm:p-6 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 font-bold flex items-center justify-center shadow-md">
-              <FileText className="w-5 h-5" />
+            <div className="relative w-11 h-11 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 to-amber-600 shadow-md shrink-0">
+              <img
+                src="/logo.jpg"
+                alt="AAliya Logo"
+                className="w-full h-full object-cover rounded-full bg-white"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div>
               <h3 className="font-serif-title font-bold text-lg text-white">

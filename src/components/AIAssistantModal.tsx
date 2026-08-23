@@ -145,8 +145,16 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
         {/* Modal Header */}
         <div className="p-4 sm:p-5 bg-slate-800/90 border-b border-slate-700 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-bold shadow-md">
-              <Sparkles className="w-5 h-5 text-slate-950" />
+            <div className="relative w-11 h-11 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 via-amber-300 to-amber-500 shadow-md shrink-0">
+              <img
+                src="/logo.jpg"
+                alt="AAliya Logo"
+                className="w-full h-full object-cover rounded-full bg-white"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-amber-500 flex items-center justify-center text-slate-950 border border-slate-900 shadow">
+                <Sparkles className="w-2.5 h-2.5" />
+              </div>
             </div>
             <div>
               <div className="flex items-center gap-2">
