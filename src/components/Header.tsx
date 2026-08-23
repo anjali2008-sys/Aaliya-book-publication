@@ -12,6 +12,7 @@ import {
   FileText
 } from 'lucide-react';
 import { TELEGRAM_CHANNEL_URL } from '../data/publicationData';
+import { Logo } from './Logo';
 
 interface HeaderProps {
   onOpenAI: () => void;
@@ -27,14 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAI, onOpenRegister }) => {
         <div className="flex items-center justify-between h-20">
           {/* Logo / Brand Name */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 via-amber-300 to-amber-500 shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform duration-200 shrink-0">
-              <img
-                src="/logo.jpg"
-                alt="AAliya Book Publication Logo"
-                className="w-full h-full object-cover rounded-full bg-white"
-                referrerPolicy="no-referrer"
-              />
-            </div>
+            <Logo size="md" className="group-hover:scale-105 transition-transform duration-200" />
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
                 <span className="font-serif-title font-extrabold text-xl sm:text-2xl tracking-tight text-white group-hover:text-amber-300 transition-colors">

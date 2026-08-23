@@ -17,6 +17,7 @@ import {
   FileCheck2
 } from 'lucide-react';
 import { TELEGRAM_CHANNEL_URL, TELEGRAM_USERNAME } from '../data/publicationData';
+import { Logo } from './Logo';
 
 interface FooterProps {
   onOpenAI: () => void;
@@ -140,14 +141,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAI, onOpenRegister }) => {
           {/* Col 1 & 2: Brand Information */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 to-amber-600 shadow-md shrink-0">
-                <img
-                  src="/logo.jpg"
-                  alt="AAliya Book Publication Logo"
-                  className="w-full h-full object-cover rounded-full bg-white"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
+              <Logo size="md" />
               <div className="flex flex-col">
                 <span className="font-serif-title font-extrabold text-xl text-white">
                   AAliya Book Publication

@@ -14,6 +14,7 @@ import {
   Zap
 } from 'lucide-react';
 import { TELEGRAM_CHANNEL_URL, TELEGRAM_USERNAME } from '../data/publicationData';
+import { Logo } from './Logo';
 
 interface HeroProps {
   onOpenAI: () => void;
@@ -37,9 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAI, onOpenRegister }) => {
             {/* Authentic Badge with Logo */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-semibold shadow-sm">
-                <div className="w-5 h-5 rounded-full overflow-hidden p-0.5 bg-amber-400 shrink-0">
-                  <img src="/logo.jpg" alt="Logo" className="w-full h-full object-cover rounded-full" referrerPolicy="no-referrer" />
-                </div>
+                <Logo size="xs" showRing={false} className="w-5 h-5" />
                 <span>Authentic Handwriting Services • Est. 2018</span>
               </div>
             </div>
@@ -149,9 +148,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAI, onOpenRegister }) => {
               {/* Top Card Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-700">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 to-amber-600 shrink-0">
-                    <img src="/logo.jpg" alt="AAliya Logo" className="w-full h-full object-cover rounded-full bg-white" referrerPolicy="no-referrer" />
-                  </div>
+                  <Logo size="sm" className="w-10 h-10" />
                   <div>
                     <h3 className="font-bold text-white text-base">Verified Project Breakdown</h3>
                     <p className="text-xs text-slate-400">Authentic Manuscript Scribing</p>

@@ -11,6 +11,7 @@ import {
   QrCode
 } from 'lucide-react';
 import { TELEGRAM_CHANNEL_URL, TELEGRAM_USERNAME } from '../data/publicationData';
+import { Logo } from './Logo';
 
 export const TelegramRedirectSection: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -61,13 +62,8 @@ Please share the registration form and 70% advance payout verification details.`
             <div className="lg:col-span-7 space-y-6">
               
               <div className="flex items-center gap-4">
-                <div className="relative w-16 h-16 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 via-sky-400 to-blue-500 shadow-lg shadow-sky-500/30 shrink-0">
-                  <img
-                    src="/logo.jpg"
-                    alt="AAliya Official Logo"
-                    className="w-full h-full object-cover rounded-full bg-white"
-                    referrerPolicy="no-referrer"
-                  />
+                <div className="relative shrink-0">
+                  <Logo size="lg" alt="AAliya Official Logo" />
                   <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-sky-500 flex items-center justify-center text-white border-2 border-slate-900 shadow">
                     <Send className="w-3 h-3" />
                   </div>

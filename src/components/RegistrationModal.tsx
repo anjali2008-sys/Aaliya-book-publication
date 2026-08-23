@@ -13,6 +13,7 @@ import {
   IndianRupee
 } from 'lucide-react';
 import { PROJECT_PLANS, TELEGRAM_CHANNEL_URL, TELEGRAM_USERNAME } from '../data/publicationData';
+import { Logo } from './Logo';
 
 interface RegistrationModalProps {
   isOpen: boolean;
@@ -75,14 +76,7 @@ Hello Coordinator, I am ready to start my assignment. Please assign my manuscrip
         {/* Modal Header */}
         <div className="p-5 sm:p-6 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="relative w-11 h-11 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 to-amber-600 shadow-md shrink-0">
-              <img
-                src="/logo.jpg"
-                alt="AAliya Logo"
-                className="w-full h-full object-cover rounded-full bg-white"
-                referrerPolicy="no-referrer"
-              />
-            </div>
+            <Logo size="sm" className="w-11 h-11" />
             <div>
               <h3 className="font-serif-title font-bold text-lg text-white">
                 Book Handwriting Slot

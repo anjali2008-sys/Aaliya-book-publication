@@ -243,9 +243,13 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 export const LIVE_ACTIVITY = [
-  { name: "Priya V.", city: "Lucknow", action: "Received ₹17,500 (70% Advance)", time: "4 mins ago" },
-  { name: "Amit K.", city: "Delhi NCR", action: "Submitted 80 Pages (Plan 2 Approval)", time: "12 mins ago" },
-  { name: "Kavita N.", city: "Bengaluru", action: "Registered for Master Scribe Plan", time: "18 mins ago" },
-  { name: "Rajesh S.", city: "Patna", action: "Received ₹24,500 Advance via UPI", time: "25 mins ago" },
-  { name: "Deepika M.", city: "Chandigarh", action: "Received Final Settlement ₹9,000", time: "34 mins ago" }
+  { name: "Priya V.", city: "Lucknow", action: "Received ₹17,500 (70% Advance)", time: "Just now" },
+  { name: "Amit K.", city: "Delhi NCR", action: "Submitted 80 Pages (Plan 2 Approval)", time: "5 mins ago" },
+  { name: "Kavita N.", city: "Bengaluru", action: "Booked Master Scribe Plan", time: "11 mins ago" },
+  { name: "Rajesh S.", city: "Patna", action: "Received ₹24,500 Advance via UPI", time: "18 mins ago" },
+  { name: "Deepika M.", city: "Chandigarh", action: "Received Final Settlement ₹9,000", time: "26 mins ago" },
+  { name: "Suresh P.", city: "Jaipur", action: "Received ₹21,000 (70% Advance)", time: "32 mins ago" },
+  { name: "Meenakshi R.", city: "Chennai", action: "Registered for Starter Scribe Slot", time: "39 mins ago" },
+  { name: "Vikram T.", city: "Indore", action: "Completed 100 Pages Quality Check", time: "48 mins ago" },
+  { name: "Pooja G.", city: "Ahmedabad", action: "Received ₹17,500 Instant UPI Transfer", time: "55 mins ago" }
 ];

@@ -11,6 +11,7 @@ import {
   Clock,
   HeartHandshake
 } from 'lucide-react';
+import { Logo } from './Logo';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -20,14 +21,7 @@ export const AboutSection: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-5 mb-16">
           <div className="flex justify-center">
-            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 bg-gradient-to-tr from-amber-400 via-amber-300 to-amber-500 shadow-xl shadow-amber-500/20">
-              <img
-                src="/logo.jpg"
-                alt="AAliya Book Publication Seal"
-                className="w-full h-full object-cover rounded-full bg-white shadow-inner"
-                referrerPolicy="no-referrer"
-              />
-            </div>
+            <Logo size="xl" alt="AAliya Book Publication Seal" />
           </div>
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-wider">
