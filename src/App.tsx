@@ -14,10 +14,15 @@ import { Footer } from './components/Footer';
 import { AIAssistantModal } from './components/AIAssistantModal';
 import { RegistrationModal } from './components/RegistrationModal';
 import { FloatingAIAssistant } from './components/FloatingAIAssistant';
+import { RakshaBandhanBanner } from './components/RakshaBandhanBanner';
+import { RakshaBandhanSection } from './components/RakshaBandhanSection';
+import { RakshaBandhanSpecialModal } from './components/RakshaBandhanSpecialModal';
+import { RakshaBandhanFloatingBadge } from './components/RakshaBandhanFloatingBadge';
 
 export default function App() {
   const [isAIOpen, setIsAIOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  const [isRakhiOfferOpen, setIsRakhiOfferOpen] = useState(false);
   const [selectedPlanForRegistration, setSelectedPlanForRegistration] = useState<string | undefined>(undefined);
 
   const handleOpenRegister = (planId?: string) => {
@@ -29,8 +34,17 @@ export default function App() {
     setIsAIOpen(true);
   };
 
+  const handleOpenRakhiOffer = () => {
+    setIsRakhiOfferOpen(true);
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-amber-500 selection:text-white">
+      {/* 48-Hour Auto-Expiring Raksha Bandhan Festive Ribbon */}
+      <RakshaBandhanBanner 
+        onOpenOfferModal={handleOpenRakhiOffer}
+      />
+
       {/* Header with Navigation & Live Notice */}
       <Header 
         onOpenAI={handleOpenAI}
@@ -46,6 +60,12 @@ export default function App() {
         <Hero 
           onOpenAI={handleOpenAI}
           onOpenRegister={handleOpenRegister}
+        />
+
+        {/* 48-Hour Raksha Bandhan Special Showcase Section (Auto-disappears when 48h ends) */}
+        <RakshaBandhanSection 
+          onOpenRegister={handleOpenRegister}
+          onOpenOfferModal={handleOpenRakhiOffer}
         />
 
         {/* About AAliya Book Publication */}
@@ -94,6 +114,11 @@ export default function App() {
         onOpenAI={handleOpenAI}
       />
 
+      {/* 48-Hour Floating Raksha Bandhan Badge */}
+      <RakshaBandhanFloatingBadge 
+        onOpenOfferModal={handleOpenRakhiOffer}
+      />
+
       {/* Interactive AI Assistant Modal (Gemini 3.7 Flash) */}
       <AIAssistantModal 
         isOpen={isAIOpen}
@@ -109,6 +134,16 @@ export default function App() {
         isOpen={isRegisterOpen}
         onClose={() => setIsRegisterOpen(false)}
         initialPlanId={selectedPlanForRegistration}
+      />
+
+      {/* Raksha Bandhan Special Poster & 20% Discount Offer Modal */}
+      <RakshaBandhanSpecialModal 
+        isOpen={isRakhiOfferOpen}
+        onClose={() => setIsRakhiOfferOpen(false)}
+        onSelectPlan={(planId) => {
+          setIsRakhiOfferOpen(false);
+          handleOpenRegister(planId);
+        }}
       />
     </div>
   );

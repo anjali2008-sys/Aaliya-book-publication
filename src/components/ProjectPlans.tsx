@@ -9,9 +9,11 @@ import {
   ShieldCheck, 
   ArrowRight,
   IndianRupee,
-  Star
+  Star,
+  Gift
 } from 'lucide-react';
 import { PROJECT_PLANS, ProjectPlan, TELEGRAM_CHANNEL_URL } from '../data/publicationData';
+import { useFestivalOffer } from '../hooks/useFestivalOffer';
 
 interface ProjectPlansProps {
   onOpenRegister: (planId: string) => void;
@@ -19,6 +21,8 @@ interface ProjectPlansProps {
 }
 
 export const ProjectPlans: React.FC<ProjectPlansProps> = ({ onOpenRegister, onOpenAI }) => {
+  const { isExpired, discountPercent } = useFestivalOffer();
+  const isSpecialOffer = !isExpired;
   return (
     <section id="plans" className="py-16 sm:py-24 bg-white text-slate-900 border-b border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -124,8 +128,19 @@ export const ProjectPlans: React.FC<ProjectPlansProps> = ({ onOpenRegister, onOp
 
                     {/* Registration Fee */}
                     <div className="mt-2 pt-2 border-t border-dashed border-slate-700/50 flex items-center justify-between text-xs">
-                      <span className="text-slate-400">Registration Fee:</span>
-                      <span className="font-bold text-amber-500">₹{plan.registrationFee}/-</span>
+                      <span className="text-slate-400">
+                        {isSpecialOffer ? '🎁 Rakhi Special Reg Fee:' : 'Registration Fee:'}
+                      </span>
+                      <div className="flex items-center gap-1.5">
+                        {isSpecialOffer && (
+                          <span className="line-through text-slate-500 text-[11px]">
+                            ₹{plan.registrationFee}/-
+                          </span>
+                        )}
+                        <span className={`font-bold ${isSpecialOffer ? 'text-emerald-400 font-extrabold text-sm' : 'text-amber-500'}`}>
+                          ₹{isSpecialOffer ? Math.round(plan.registrationFee * (1 - discountPercent / 100)) : plan.registrationFee}/-
+                        </span>
+                      </div>
                     </div>
                   </div>
 

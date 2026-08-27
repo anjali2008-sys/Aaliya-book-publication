@@ -18,8 +18,31 @@ export interface ProjectPlan {
   features: string[];
 }
 
-export const TELEGRAM_CHANNEL_URL = "https://t.me/aaliyabookpublicationn";
-export const TELEGRAM_USERNAME = "@aaliyabookpublicationn";
+export const TELEGRAM_CHANNEL_URL = "https://t.me/aaliya_book_publication_official";
+export const TELEGRAM_USERNAME = "@aaliya_book_publication_official";
+
+export const RAKSHA_BANDHAN_CONFIG = {
+  id: "raksha-bandhan-2026",
+  title: "💙✨ Raksha Bandhan Special ✨💙",
+  tagline: "इस RAKSHA BANDHAN अपने करियर को दें एक नई शुरुआत!",
+  discountPercent: 20,
+  durationHours: 48,
+  telegramUrl: "https://t.me/aaliya_book_publication_official",
+  telegramHandle: "@aaliya_book_publication_official",
+  highlights: [
+    "🎀 Is Raksha Bandhan, apne talent ko book mein publish karne ka mauka paayein!",
+    "🤝 Sabhi interested writers ke liye work-from-home opportunity",
+    "💰 Publication ke saath guaranteed 70% advance earning & profit opportunity",
+    "🎁 Registration Fee par Flat 20% OFF (Limited 48 Hours Special)",
+    "⏰ Registration fee mandatory — Instant slot booking on Telegram",
+    "💙 Limited registrations — Join Now! ✨"
+  ],
+  plansWithDiscount: [
+    { planNumber: 1, name: "Starter Scribe", pages: 50, days: 7, salary: 25000, advance: 17500, regFeeOriginal: 500, regFeeDiscounted: 400 },
+    { planNumber: 2, name: "Professional Scribe", pages: 80, days: 10, salary: 30000, advance: 21000, regFeeOriginal: 699, regFeeDiscounted: 559 },
+    { planNumber: 3, name: "Master Scholar", pages: 100, days: 15, salary: 35000, advance: 24500, regFeeOriginal: 999, regFeeDiscounted: 799 }
+  ]
+};
 
 export const PROJECT_PLANS: ProjectPlan[] = [
   {

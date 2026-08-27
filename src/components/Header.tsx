@@ -9,10 +9,12 @@ import {
   CheckCircle2,
   HelpCircle,
   Calculator,
-  FileText
+  FileText,
+  Gift
 } from 'lucide-react';
 import { TELEGRAM_CHANNEL_URL } from '../data/publicationData';
 import { Logo } from './Logo';
+import { useFestivalOffer } from '../hooks/useFestivalOffer';
 
 interface HeaderProps {
   onOpenAI: () => void;
@@ -21,6 +23,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onOpenAI, onOpenRegister }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isExpired } = useFestivalOffer();
 
   return (
     <header className="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 text-slate-100 shadow-lg">
@@ -42,7 +45,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAI, onOpenRegister }) => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
+            {!isExpired && (
+              <a 
+                href="#raksha-bandhan-special" 
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-rose-500/20 border border-rose-500/40 text-amber-300 hover:text-white text-xs font-bold transition-all animate-pulse"
+              >
+                <Gift className="w-3 h-3 text-rose-400" />
+                <span>Rakhi Special 20% OFF</span>
+              </a>
+            )}
             <a href="#about" className="hover:text-amber-300 transition-colors">About Us</a>
             <a href="#how-it-works" className="hover:text-amber-300 transition-colors">How It Works</a>
             <a href="#plans" className="hover:text-amber-300 transition-colors">Project Plans</a>

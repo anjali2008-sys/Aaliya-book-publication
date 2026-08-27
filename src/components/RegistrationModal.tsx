@@ -10,10 +10,13 @@ import {
   Check, 
   ArrowRight,
   Sparkles,
-  IndianRupee
+  IndianRupee,
+  Gift,
+  Tag
 } from 'lucide-react';
 import { PROJECT_PLANS, TELEGRAM_CHANNEL_URL, TELEGRAM_USERNAME } from '../data/publicationData';
 import { Logo } from './Logo';
+import { useFestivalOffer } from '../hooks/useFestivalOffer';
 
 interface RegistrationModalProps {
   isOpen: boolean;
@@ -26,6 +29,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
   onClose,
   initialPlanId 
 }) => {
+  const { isExpired, discountPercent } = useFestivalOffer();
+  const isSpecialOffer = !isExpired;
   const [selectedPlanId, setSelectedPlanId] = useState<string>(initialPlanId || 'plan-2');
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
@@ -43,6 +48,9 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
   if (!isOpen) return null;
 
   const currentPlan = PROJECT_PLANS.find(p => p.id === selectedPlanId) || PROJECT_PLANS[1];
+  const discountedRegFee = isSpecialOffer 
+    ? Math.round(currentPlan.registrationFee * (1 - discountPercent / 100))
+    : currentPlan.registrationFee;
 
   const handleGenerateSlip = (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,6 +63,7 @@ Location: ${cityState || 'India'}
 Selected Project: ${currentPlan.name} (${currentPlan.pages} Pages / ${currentPlan.durationDays} Days)
 Total Project Salary: ₹${currentPlan.totalSalary.toLocaleString('en-IN')}/-
 *Guaranteed 70% Advance: ₹${currentPlan.advanceSalary.toLocaleString('en-IN')}/-*
+${isSpecialOffer ? `*Raksha Bandhan Special Reg Fee (20% OFF): ₹${discountedRegFee}/-* (Original: ₹${currentPlan.registrationFee})` : `Registration Fee: ₹${currentPlan.registrationFee}/-`}
 Preferred Payout: ${payoutMode}
 
 Hello Coordinator, I am ready to start my assignment. Please assign my manuscript kit and confirm advance payout.`;
@@ -205,6 +214,26 @@ Hello Coordinator, I am ready to start my assignment. Please assign my manuscrip
                       Direct Bank Transfer (NEFT / IMPS)
                     </option>
                   </select>
+                </div>
+              </div>
+
+              {/* Registration Fee Summary with 48h Festive Discount */}
+              <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between text-xs">
+                <div className="flex items-center gap-1.5">
+                  <Tag className="w-3.5 h-3.5 text-amber-400" />
+                  <span className="text-slate-300">
+                    {isSpecialOffer ? 'Rakhi Special Reg Fee (20% OFF):' : 'One-Time Reg Fee:'}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  {isSpecialOffer && (
+                    <span className="line-through text-slate-500 text-[11px]">
+                      ₹{currentPlan.registrationFee}
+                    </span>
+                  )}
+                  <span className="font-extrabold text-emerald-400 text-sm">
+                    ₹{discountedRegFee}/-
+                  </span>
                 </div>
               </div>
 

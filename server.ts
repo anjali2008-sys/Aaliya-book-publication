@@ -73,32 +73,37 @@ Available Project Plans:
 
 4-Step Registration Process:
 1. Step 1: Choose your preferred project plan (Plan 1, 2, or 3).
-2. Step 2: Open our official Telegram channel: https://t.me/aaliyabookpublicationn (Handle: @aaliyabookpublicationn).
-3. Step 3: Complete verification with our official project manager and receive your 70% advance payment via Bank Transfer / UPI.
+2. Step 2: Open our official Telegram channel: https://t.me/aaliya_book_publication_official (Handle: @aaliya_book_publication_official).
+3. Step 3: Complete verification with our official project manager, claim your 20% Raksha Bandhan fee discount, and receive your 70% advance payment via Bank Transfer / UPI.
 4. Step 4: Write your pages within the allotted deadline and submit digital photos/courier to claim your remaining 30% balance.
 
+Special Limited Festival Offer:
+- Raksha Bandhan Special: 20% Flat OFF on Registration fees for next 48 Hours. (Plan 1 kit fee is now ₹400 instead of ₹500, Plan 2 is ₹559, Plan 3 is ₹799). 70% Advance payout remains guaranteed.
+
 Contact Details:
-- Official Telegram Channel: https://t.me/aaliyabookpublicationn
-- Telegram Handle: @aaliyabookpublicationn
+- Official Telegram Channel: https://t.me/aaliya_book_publication_official
+- Telegram Handle: @aaliya_book_publication_official
 - Support Email: officialaaliyabookpublication@gmail.com
 - Working Hours: Monday to Saturday, 9:00 AM - 7:00 PM IST
 
 Formatting & Style:
 - Use bullet points, bold highlights, and clean formatting for readability.
 - Be encouraging, clear, and reassuring.
-- When relevant, encourage connecting on Telegram (https://t.me/aaliyabookpublicationn).`;
+- When relevant, encourage connecting on Telegram (https://t.me/aaliya_book_publication_official).`;
 
       if (!apiKey) {
         // Safe contextual response if API key is not yet set
-        let offlineReply = "Welcome to AAliya Book Publication! We offer genuine handwriting work-from-home jobs with guaranteed 70% advance payment. You can select Plan 1 (₹25,000), Plan 2 (₹30,000), or Plan 3 (₹35,000). To register and receive your advance payout, please join our official Telegram channel: https://t.me/aaliyabookpublicationn.";
+        let offlineReply = "Welcome to AAliya Book Publication! We offer genuine handwriting work-from-home jobs with guaranteed 70% advance payment and 20% Raksha Bandhan Special Registration Discount. You can select Plan 1 (₹25,000), Plan 2 (₹30,000), or Plan 3 (₹35,000). To register and receive your advance payout, please join our official Telegram channel: https://t.me/aaliya_book_publication_official.";
         
         const lower = message.toLowerCase();
-        if (lower.includes('advance') || lower.includes('payment') || lower.includes('salary') || lower.includes('paisa') || lower.includes('rupay')) {
+        if (lower.includes('rakhi') || lower.includes('raksha') || lower.includes('bandhan') || lower.includes('special') || lower.includes('discount') || lower.includes('20%') || lower.includes('offer')) {
+          offlineReply = "💙✨ **Raksha Bandhan Special Offer** ✨💙\n\nIs Raksha Bandhan, AAliya Book Publication de raha hai sabhi registration fees par **FLAT 20% OFF** (48 Hours Special):\n• **Plan 1**: ₹500 ➔ **₹400** (Salary: ₹25,000 | 70% Advance: ₹17,500)\n• **Plan 2**: ₹699 ➔ **₹559** (Salary: ₹30,000 | 70% Advance: ₹21,000)\n• **Plan 3**: ₹999 ➔ **₹799** (Salary: ₹35,000 | 70% Advance: ₹24,500)\n\nSlot book karne ke liye Telegram par judiye: https://t.me/aaliya_book_publication_official";
+        } else if (lower.includes('advance') || lower.includes('payment') || lower.includes('salary') || lower.includes('paisa') || lower.includes('rupay')) {
           offlineReply = "AAliya Book Publication ensures that **70% of your total project salary is transferred upfront** to your Bank Account or UPI immediately upon slot booking on Telegram. For example: ₹17,500 advance for Plan 1 (₹25k total), ₹21,000 advance for Plan 2 (₹30k total), and ₹24,500 advance for Plan 3 (₹35k total).";
         } else if (lower.includes('plan') || lower.includes('kaam') || lower.includes('work') || lower.includes('job')) {
-          offlineReply = "We offer 3 authentic handwriting project plans:\n• **Plan 1**: 50 Pages | 7 Days | ₹25,000 Salary (70% Advance: ₹17,500) | Reg Fee: ₹500\n• **Plan 2**: 80 Pages | 10 Days | ₹30,000 Salary (70% Advance: ₹21,000) | Reg Fee: ₹699\n• **Plan 3**: 100 Pages | 15 Days | ₹35,000 Salary (70% Advance: ₹24,500) | Reg Fee: ₹999\n\nTo join, visit our Telegram: https://t.me/aaliyabookpublicationn";
+          offlineReply = "We offer 3 authentic handwriting project plans with 20% Raksha Bandhan Discount:\n• **Plan 1**: 50 Pages | 7 Days | ₹25,000 Salary (70% Advance: ₹17,500) | Reg Fee: ₹400 (Was ₹500)\n• **Plan 2**: 80 Pages | 10 Days | ₹30,000 Salary (70% Advance: ₹21,000) | Reg Fee: ₹559 (Was ₹699)\n• **Plan 3**: 100 Pages | 15 Days | ₹35,000 Salary (70% Advance: ₹24,500) | Reg Fee: ₹799 (Was ₹999)\n\nTo join, visit our Telegram: https://t.me/aaliya_book_publication_official";
         } else if (lower.includes('telegram') || lower.includes('apply') || lower.includes('register') || lower.includes('join')) {
-          offlineReply = "Registration is conducted through our official verified Telegram channel: **https://t.me/aaliyabookpublicationn** (@aaliyabookpublicationn). Simply join the channel and message our coordinator to start your project!";
+          offlineReply = "Registration is conducted through our official verified Telegram channel: **https://t.me/aaliya_book_publication_official** (@aaliya_book_publication_official). Simply join the channel and message our coordinator to start your project!";
         }
 
         return res.json({ reply: offlineReply, source: 'offline_mode' });
